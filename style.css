@@ -14,6 +14,10 @@ body {
   box-sizing: inherit;
 }
 
+.snap-top {
+  scroll-snap-align: start;
+}
+
 /* Full screen sections with safe padding for fixed header */
 header,
 .about-product,
@@ -30,9 +34,13 @@ header,
   scroll-snap-align: start;
 }
 
-html {
+html, body {
   scroll-behavior: smooth;
-  scroll-snap-type: y proximity;
+}
+
+.announcement-bar,
+.navbar {
+  scroll-snap-align: none;
 }
 
 /* Announcement Bar */
@@ -143,7 +151,7 @@ html {
 header {
   text-align: center;
   min-height: 550px;
-  padding: 8rem 1rem 3rem;
+  padding: 7rem 2rem 3rem;
   background-image: linear-gradient(rgba(224,217,227,0.6), rgba(224,217,227,0.6)), url(Untitled-4.jpg);
   background-size: cover;
   background-position: center;
@@ -151,15 +159,15 @@ header {
 }
 
 header img.logo {
-  width: 550px;
-  margin-bottom: 1rem;
+  width: 525px;
+  margin-bottom: 0;
 }
 
 header h1 {
-  font-size: 2.4rem;
+  font-size: 2.25rem;
   font-weight: 600;
   letter-spacing: 1px;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0;
 }
 
 header p {

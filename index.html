@@ -8,7 +8,7 @@
 
   <link rel="icon" type="image/png" href="favicon.png">
 </head>
-<body>
+<body onload="window.scrollTo(0, 0);">
     <div class="announcement-bar">
   <div class="msg-wrapper">
     <span class="msg active">Free shipping on orders over $40</span>
@@ -16,8 +16,6 @@
     <span class="msg">Vegan & gluten-free</span>
   </div>
   </div>
-
-
 
   <nav class="navbar">
     <a href="#about-product">Our Product</a>
@@ -29,7 +27,7 @@
   <header>
     <img src="logo.png" alt="Logo" class="logo">
     <h1>PRENATAL MULTIVITAMIN</h1>
-    <p>Nutrients for the pregnant body</p>
+    <p><i>nutrients for every pregnant body</i></p>
   </header>
 
   <section id="about-product" class="about-product">
@@ -210,6 +208,18 @@
     </div>
   </div>
 
+  <script>
+  // Prevent browser scroll restoration
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
+  // Hard reset scroll on refresh
+  window.onload = function() {
+    window.scrollTo(0, 0);
+    setTimeout(() => window.scrollTo(0, 0), 10);  // double-tap for Safari
+  };
+</script>
 <script src="script.js"></script>
 </body>
 </html>
