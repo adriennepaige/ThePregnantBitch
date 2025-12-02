@@ -85,3 +85,40 @@ slides.forEach(slide => {
     quoteAuthor.textContent = author;
   });
 });
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const backToTop = document.getElementById("backToTop");
+  if (!backToTop) return; // safety check
+
+  let lastScroll = 0;
+
+  window.addEventListener("scroll", () => {
+    const current = window.scrollY;
+
+    // Show after scrolling down 600px
+    if (current > 600) {
+      // scrolling down
+      if (current > lastScroll) {
+        backToTop.classList.add("show");
+      }
+    }
+
+    // Hide immediately when scrolling up
+    if (current < lastScroll) {
+      backToTop.classList.remove("show");
+    }
+
+    lastScroll = current;
+  });
+
+  // Scroll back to top on click
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+});
+
+
+
+

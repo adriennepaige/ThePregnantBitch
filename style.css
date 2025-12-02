@@ -150,7 +150,6 @@ html, body {
 /* Header */
 header {
   text-align: center;
-  min-height: 550px;
   padding: 7rem 2rem 3rem;
   background-image: linear-gradient(rgba(224,217,227,0.6), rgba(224,217,227,0.6)), url(Untitled-4.jpg);
   background-size: cover;
@@ -693,4 +692,41 @@ footer {
   font-weight: 600;
   color: #000000;
   letter-spacing: 1px;
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #A28EAC;
+  color: white;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  z-index: 9000;
+}
+
+#backToTop.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#backToTop:hover {
+  background: #6B4179;
+}
+
+#backToTop:not(.show) {
+  transition: opacity 0.15s ease; /* faster fade out */
 }
